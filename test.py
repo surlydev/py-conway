@@ -38,6 +38,13 @@ class TestConway(unittest.TestCase):
         game = Game(3, 3, beacon)
         self.assertEqual(game._numNeighbors(1, 2), 2)
 
+    def test_game_check_top_row_cell_with_one_neighbour(self):
+        beacon = [[0, 0, 1]
+                , [0, 0, 0]
+                , [0, 0, 0]]
+        game = Game(3, 3, beacon)
+        self.assertEqual(game._numNeighbors(1, 2), 1)
+
     #def test_single_column_array(self):
     #    beacon = [[0], [0], [1]]
     #    game = Game(1, 1, beacon)
