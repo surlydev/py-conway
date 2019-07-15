@@ -29,12 +29,16 @@ class TestConway(unittest.TestCase):
 
     # Test that check cell returns a valid value
     def test_game_check_cell_with_one_neighbor(self):
-        beacon = [[0, 1, 0], [0, 1, 0], [0, 0, 0]]
+        beacon = [[0, 1, 0]
+                , [0, 1, 0]
+                , [0, 0, 0]]
         game = Game(3, 3, beacon)
         self.assertEqual(game._numNeighbors(1, 1), 1)
 
     def test_game_check_cell_with_two_neighbors(self):
-        beacon = [[0, 1, 0], [0, 1, 0], [0, 0, 0]]
+        beacon = [[0, 1, 0]
+                , [0, 1, 0]
+                , [0, 0, 0]]
         game = Game(3, 3, beacon)
         self.assertEqual(game._numNeighbors(1, 2), 2)
 
