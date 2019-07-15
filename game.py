@@ -28,8 +28,8 @@ class Game:
         if x < endX:
             endX = 1
 
-        for checkX in range(startX, endX):
-            for checkY in range(startY, endY):
+        for checkY in range(startY, endY):
+            for checkX in range(startX, endX):
                 if not (checkX == 0 and checkY == 0):
                     if (self.state[x + checkX][y + checkY] == 1):
                         neighbors += 1
