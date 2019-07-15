@@ -23,11 +23,11 @@ class Game:
         if (y > 0):
             startY = -1
 
-        if y < endY:
-            endY = 1
         if x < endX:
             endX = 1
-
+        if y < endY:
+            endY = 1
+        
         for checkY in range(startY, endY):
             for checkX in range(startX, endX):
                 if not (checkX == 0 and checkY == 0):
