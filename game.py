@@ -27,12 +27,23 @@ class Game:
             endX = 1
         if y < endY:
             endY = 1
-        
+
+        print '---'
+        print 'x: ' + str(x) + ' y: ' + str(y)
+        print 'startX: ' + str(startX) + ' endX: ' + str(endX)
+        print 'startY: ' + str(startY) + ' endY: ' + str(endY)
+
+        for b in range(startY, endY):
+            print 'b ' + str(b)
+
         for checkY in range(startY, endY):
             for checkX in range(startX, endX):
+                print 'checking ' + str(x + checkX) + ' and ' + str(y + checkY)
                 if not (checkX == 0 and checkY == 0):
-                    if (self.state[x + checkX][y + checkY] == 1):
-                        neighbors += 1
+                    print 'state :' 
+                    print self.state[x + checkX][y + checkY]
+                    if (self.state[x + checkX][y + checkY] == 1): 
+                       neighbors += 1
 
         return neighbors
 
