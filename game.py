@@ -11,37 +11,52 @@ class Game:
             self.beacon = beacon
         self.state = self.beacon
 
-    def _numNeighbors(self, x, y):
+    def _numNeighbors(self, x, y, debugMode=0):
+        if debugMode == 1:
+            print '---Game.py _numNeighbours ---'
+            print 'Debug Mode: ON'
+            print 'x=' + str(x) + ' y=' + str(y)
         startX = 0
         startY = 0
+        endX = 0
+        endY = 0
         neighbors = 0
-        endX = self.board_size[0]
-        endY = self.board_size[1]
+        boardWidth = self.board_size[0]
+        boardHeight = self.board_size[1]
 
         if (x > 0):
             startX = -1
         if (y > 0):
             startY = -1
 
-        if x < endX:
+        if x < boardWidth:
             endX = 1
-        if y < endY:
+        if y < boardHeight:
             endY = 1
 
-        print '---'
-        print 'x: ' + str(x) + ' y: ' + str(y)
-        print 'startX: ' + str(startX) + ' endX: ' + str(endX)
-        print 'startY: ' + str(startY) + ' endY: ' + str(endY)
+        if debugMode == 1:
+            print ' x: ' + str(x) + ' y: ' + str(y)
+            print ' startX: ' + str(startX) + ' endX: ' + str(endX)
+            print ' startY: ' + str(startY) + ' endY: ' + str(endY)
 
-        for b in range(startY, endY):
-            print 'b ' + str(b)
+        if debugMode == 1:
+            print 'checking X range'
+            for b in range(startX, endX + 1): #needs a +1 on the endX range to include it
+                print ' value = ' + str(b)
+                
+        if debugMode == 1:
+            print 'checking Y range'
+            for b in range(startY, endY + 1): #needs a +1 on the endY range to include it
+                print ' value = ' + str(b)
 
-        for checkY in range(startY, endY):
-            for checkX in range(startX, endX):
-                print 'checking ' + str(x + checkX) + ' and ' + str(y + checkY)
+        for checkY in range(startY, endY + 1):
+            for checkX in range(startX, endX + 1):
+                if debugMode ==1:
+                    print ' checking ' + str(x + checkX) + ' and ' + str(y + checkY)
                 if not (checkX == 0 and checkY == 0):
-                    print 'state :' 
-                    print self.state[x + checkX][y + checkY]
+                    if debugMode == 1:
+                        print ' state :' 
+                        print self.state[x + checkX][y + checkY]
                     if (self.state[x + checkX][y + checkY] == 1): 
                        neighbors += 1
 
