@@ -1,6 +1,7 @@
 import numpy as np
 import copy
 
+#https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 class Game:
     def __init__(self, width=6, height=6, beacon=None):
