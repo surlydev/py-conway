@@ -61,7 +61,7 @@ class Game:
                     if (self.state[x + checkX][y + checkY] == 1): 
                         neighbors += 1
                         if debugMode == 1:
-                            print ' found a neighbour at ' + str(x + checkX) + ', ' + str(y + checkY) + '. That''s ' + str(neighbours) + ' found.'
+                            print ' found a neighbour at ' + str(x + checkX) + ', ' + str(y + checkY) + '. That''s ' + str(neighbors) + ' found.'
 
 
         return neighbors
