@@ -82,7 +82,8 @@ class TestConway(unittest.TestCase):
                 , [0, 0, 0]]
         game = Game(3, 3, beacon)
         debugMode=0
-        self.assertEqual(game._numNeighbors(0, 0, debugMode), 3) 
+        if debugMode == 1:
+            self.assertEqual(game._numNeighbors(0, 0, debugMode), 3) 
 
 
 # top right with three neighbours
