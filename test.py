@@ -11,7 +11,9 @@ class TestConway(unittest.TestCase):
 
    # Add a beacon with a single cell active
     def test_game_init_beacon(self):
-        print '>=>test_game_init_beacon'
+        debugMode=0
+        if debugMode == 1:
+            print '>=>test_game_init_beacon'
         beacon = np.zeros((6, 6))
         beacon[1, 1] = 1
         game = Game(6, 6, beacon)
@@ -19,34 +21,40 @@ class TestConway(unittest.TestCase):
 
    # Test for defaults
     def test_game_init_defaults(self):
-        print '>=>test_game_init_defaults'
+        debugMode=0
+        if debugMode == 1:
+            print '>=>test_game_init_defaults'
         game = Game()
         self.assertEqual(game.board_size, (6, 6))
         self.assertTrue(np.array_equal(game.beacon, np.zeros((6, 6))))
 
    # Test for default board_size on set beacon
     def test_game_init_board_default_beacon(self):
-        print '>=>test_game_init_board_default_beacon'
+        debugMode=0
+        if debugMode == 1:
+            print '>=>test_game_init_board_default_beacon'
         game = Game(12, 12)
         self.assertTrue(np.array_equal(game.beacon, np.zeros((12, 12))))
 
    # Test that check cell returns a valid value
     def test_game_check_cell_with_one_neighbor(self):
+        debugMode=0
+        if debugMode == 1:
+            print '>=>test_game_check_cell_with_one_neighbor'
         beacon = [[0, 1, 0]
                 , [0, 1, 0]
                 , [0, 0, 0]]
         game = Game(3, 3, beacon)
-        debugMode=0
         self.assertEqual(game._numNeighbors(1, 1, debugMode), 1)
 
 
-#    def test_game_check_cell_with_two_neighbors(self):
-#        beacon = [[0, 1, 0]
-#                , [0, 1, 0]
-#                , [0, 0, 0]]
-#        game = Game(3, 3, beacon)
-#        self.assertEqual(game._numNeighbors(1, 2), 2)
-#
+    def test_game_check_cell_with_two_neighbors(self):
+        beacon = [[0, 1, 0]
+                , [0, 1, 0]
+                , [0, 0, 0]]
+        game = Game(3, 3, beacon)
+        self.assertEqual(game._numNeighbors(0, 0), 2)
+
 #    def test_game_check_top_row_cell_with_one_neighbour(self):
 #        beacon = [[0, 0, 1]
 #                , [0, 0, 0]
@@ -76,12 +84,13 @@ class TestConway(unittest.TestCase):
 #        self.assertEqual(game._numNeighbors(0, 0), 0) 
 
     def test_game_check_top_left_with_three_neighbours(self):
-        print("TL 3 N")
+        debugMode=0
+        if debugMode ==1 :
+            print("TL 3 N")
         beacon = [[1, 1, 0]
                 , [1, 1, 0]
                 , [0, 0, 0]]
         game = Game(3, 3, beacon)
-        debugMode=0
         if debugMode == 1:
             self.assertEqual(game._numNeighbors(0, 0, debugMode), 3) 
 
