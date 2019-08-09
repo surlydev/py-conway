@@ -41,28 +41,31 @@ class Game:
             print ' startY: ' + str(startY) + ' endY: ' + str(endY)
 
         if debugMode == 1:
+            #here because of my lack of understanding of Python
             print 'checking X range'
             for b in range(startX, endX + 1): #needs a +1 on the endX range to include it
                 print ' value = ' + str(b)
                 
         if debugMode == 1:
+            #here because of my lack of understanding of Python
             print 'checking Y range'
             for b in range(startY, endY + 1): #needs a +1 on the endY range to include it
                 print ' value = ' + str(b)
 
+        if debugMode == 1:
+            print 'Starting to check the ranges for all neighbours'
+
         for checkY in range(startY, endY + 1):
             for checkX in range(startX, endX + 1):
                 if debugMode ==1:
-                    print ' checking ' + str(x + checkX) + ' and ' + str(y + checkY)
+                    print ' checking ' + str(x + checkX) + ', ' + str(y + checkY)
                 if not (checkX == 0 and checkY == 0):
                     if debugMode == 1:
-                        print ' state :' 
-                        print self.state[x + checkX][y + checkY]
+                        print ' state :' + str(self.state[x + checkX][y + checkY])
                     if (self.state[x + checkX][y + checkY] == 1): 
                         neighbors += 1
                         if debugMode == 1:
                             print ' found a neighbour at ' + str(x + checkX) + ', ' + str(y + checkY) + '. That''s ' + str(neighbors) + ' found.'
-
 
         return neighbors
 
@@ -71,7 +74,10 @@ class Game:
         # For each cell, check all eight neighbors and turn on or off
         processingState = copy(self.state)
         for x, y in np.ndenumerate(self.state):
+            #This is an additional line that I want to remove later. (Testing git commit -i hunk staging)
             if (self._numNeighbors(x, y) < 2):
                 processingState[x, y] = 0
 
         self.state = processingState
+        # This is a comment to remove, also
+
