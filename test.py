@@ -47,7 +47,6 @@ class TestConway(unittest.TestCase):
         game = Game(3, 3, beacon)
         self.assertEqual(game._numNeighbors(1, 1, debugMode), 1)
 
-
     def test_game_check_cell_with_two_neighbors(self):
         beacon = [[0, 1, 0]
                 , [0, 1, 0]
@@ -62,13 +61,17 @@ class TestConway(unittest.TestCase):
         game = Game(3, 3, beacon)
         self.assertEqual(game._numNeighbors(0,1), 1)
 
-#    def test_game_check_right_column_top_row_cell_with_one_neighbour(self):
-#        beacon = [[0, 0, 1]
-#                , [1, 1, 0]
-#                , [0, 0, 0]]
-#        game = Game(3, 3, beacon)
-#        self.assertEqual(game._numNeighbors(2, 0), 1)
-#
+    def test_game_check_top_right_cell_with_one_neighbour(self):
+        debugMode=1
+        if debugMode == 1:
+            print 'TR 1N'
+        #This startup grid is designed to check that if I reference the wrong cell then it is more likely to fail
+        beacon = [[0, 0, 1]
+                , [1, 1, 0]
+                , [1, 1, 0]]
+        game = Game(3, 3, beacon)
+        self.assertEqual(game._numNeighbors(2, 0, debugMode), 1)
+
 #    def test_game_check_right_column_bottom_row_cell_with_two_neighbours(self):
 #        beacon = [[1, 1, 1]
 #                , [1, 1, 1]
