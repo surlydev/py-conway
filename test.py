@@ -62,7 +62,7 @@ class TestConway(unittest.TestCase):
         self.assertEqual(game._numNeighbors(0,1), 1)
 
     def test_game_check_top_right_cell_with_one_neighbour(self):
-        debugMode=1
+        debugMode=0
         if debugMode == 1:
             print 'TR 1N'
         #This startup grid is designed to check that if I reference the wrong cell then it is more likely to fail
@@ -73,13 +73,16 @@ class TestConway(unittest.TestCase):
         #TODO: check the 0,2 is the wrong way around, isn't it?
         self.assertEqual(game._numNeighbors(0,2, debugMode), 1)
 
-#    def test_game_check_right_column_bottom_row_cell_with_two_neighbours(self):
-#        beacon = [[1, 1, 1]
-#                , [1, 1, 1]
-#                , [0, 0, 1]]
-#        game = Game(3, 3, beacon)
-#        self.assertEqual(game._numNeighbors(2, 2), 2) 
-#
+    def test_game_check_right_column_bottom_row_cell_with_two_neighbours(self):
+        debugMode=0
+        if debugMode ==1:
+            print 'BR 2N'
+        beacon = [[0, 0, 1]
+                , [1, 1, 0]
+                , [1, 1, 0]]
+        game = Game(3, 3, beacon)
+        self.assertEqual(game._numNeighbors(2, 2), 2) 
+
 #    def test_game_check_top_left_with_no_neighbours(self):
 #        beacon = [[0, 0, 0]
 #                , [0, 0, 0]

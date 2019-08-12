@@ -84,7 +84,8 @@ class Game:
 
                         if debugMode == 1:
                             print ' found a neighbour at ' + str(checkX) + ', ' + str(checkY) + '. That''s ' + str(neighbors) + ' found.'
-                    print 'state: ' + str(self.state[checkX][checkY])
+                    if debugMode ==1:
+                        print 'state: ' + str(self.state[checkX][checkY])
 
 
             if debugMode == 1:
