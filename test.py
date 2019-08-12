@@ -70,7 +70,8 @@ class TestConway(unittest.TestCase):
                 , [1, 1, 0]
                 , [1, 1, 0]]
         game = Game(3, 3, beacon)
-        self.assertEqual(game._numNeighbors(2, 0, debugMode), 1)
+        #TODO: check the 0,2 is the wrong way around, isn't it?
+        self.assertEqual(game._numNeighbors(0,2, debugMode), 1)
 
 #    def test_game_check_right_column_bottom_row_cell_with_two_neighbours(self):
 #        beacon = [[1, 1, 1]
