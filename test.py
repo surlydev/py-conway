@@ -83,12 +83,12 @@ class TestConway(unittest.TestCase):
         game = Game(3, 3, beacon)
         self.assertEqual(game._numNeighbors(2, 2), 2) 
 
-#    def test_game_check_top_left_with_no_neighbours(self):
-#        beacon = [[0, 0, 0]
-#                , [0, 0, 0]
-#                , [0, 0, 0]]
-#        game = Game(3, 3, beacon)
-#        self.assertEqual(game._numNeighbors(0, 0), 0) 
+    def test_game_check_top_left_with_no_neighbours(self):
+        beacon = [[0, 0, 0]
+                , [0, 0, 0]
+                , [0, 0, 0]]
+        game = Game(3, 3, beacon)
+        self.assertEqual(game._numNeighbors(0, 0), 0) 
 
     def test_game_check_top_left_with_three_neighbours(self):
         debugMode=0
