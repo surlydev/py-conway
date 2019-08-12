@@ -83,7 +83,22 @@ class TestConway(unittest.TestCase):
         game = Game(3, 3, beacon)
         self.assertEqual(game._numNeighbors(2, 2), 2) 
 
+    def test_game_check_left_column_bottom_row_cell_with_three_neighbours(self):
+        debugMode=0
+        if debugMode ==1:
+            print 'BL 3N'
+        beacon = [[0, 0, 1]
+                , [1, 1, 0]
+                , [1, 1, 0]]
+        game = Game(3, 3, beacon)
+        #TODO: check the 2,0 is the wrong way around, isn't it?
+        self.assertEqual(game._numNeighbors(2, 0), 3) 
+
+
     def test_game_check_top_left_with_no_neighbours(self):
+        debugMode=0
+        if debugMode ==1 :
+            print 'TL 0N'
         beacon = [[0, 0, 0]
                 , [0, 0, 0]
                 , [0, 0, 0]]
