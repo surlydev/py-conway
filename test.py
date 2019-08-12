@@ -116,12 +116,67 @@ class TestConway(unittest.TestCase):
         if debugMode == 1:
             self.assertEqual(game._numNeighbors(0, 0, debugMode), 3) 
 
+    def test_game_check_centre_column_top_row_cell_with_four_neighbours(self):
+        debugMode=0
+        if debugMode ==1:
+            print 'TC 4N'
+        beacon = [[0, 0, 1]
+                , [1, 1, 1]
+                , [0, 0, 0]]
+        game = Game(3, 3, beacon)
+        #TODO: check the 0,1 orientation of this test. It's the wrong way around, surely?
+        self.assertEqual(game._numNeighbors(0, 1), 4) 
 
-# top right with three neighbours
+    def test_game_check_rightmost_column_centre_cell_with_two_neighbours(self):
+        debugMode=0
+        if debugMode ==1:
+            print 'RM 2N'
+        beacon = [[0, 0, 1]
+                , [1, 1, 1]
+                , [0, 0, 0]]
+        game = Game(3, 3, beacon)
+        #TODO: check the 0,1 orientation of this test. It's the wrong way around, surely?
+        self.assertEqual(game._numNeighbors(1, 2), 2) 
 
-# bottom right with three neighbours
+    def test_game_check_centre_column_bottom_row_cell_with_four_neighbours(self):
+        debugMode=0
+        if debugMode ==1:
+            print 'BC 3N'
+        beacon = [[0, 0, 1]
+                , [1, 1, 1]
+                , [0, 0, 0]]
+        game = Game(3, 3, beacon)
+        #TODO: check the 0,1 orientation of this test. It's the wrong way around, surely?
+        self.assertEqual(game._numNeighbors(2, 1), 3) 
 
-# bottom left with three neighbours
+    def test_game_check_leftmost_column_centre_cell_with_one_neighbour(self):
+        debugMode=0
+        if debugMode ==1:
+            print 'LCMR 1N'
+        beacon = [[0, 0, 1]
+                , [1, 1, 1]
+                , [0, 0, 0]]
+        game = Game(3, 3, beacon)
+        #TODO: check the 0,1 orientation of this test. It's the wrong way around, surely?
+        self.assertEqual(game._numNeighbors(1, 0), 1) 
+
+
+
+    def test_game_check_rightmost_column_centre_cell_with_two_neighbours(self):
+        debugMode=0
+        if debugMode ==1:
+            print 'RM 2N'
+        beacon = [[0, 0, 1]
+                , [1, 1, 1]
+                , [0, 0, 0]]
+        game = Game(3, 3, beacon)
+        #TODO: check the 0,1 orientation of this test. It's the wrong way around, surely?
+        self.assertEqual(game._numNeighbors(1, 2), 2) 
+
+
+
+
+
 
 # inverse 0's and 1's top left ?
 
