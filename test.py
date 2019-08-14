@@ -13,7 +13,7 @@ class TestConway(unittest.TestCase):
     def test_game_init_beacon(self):
         debugMode=0
         if debugMode == 1:
-            print '>=>test_game_init_beacon'
+            print('>=>test_game_init_beacon')
         beacon = np.zeros((6, 6))
         beacon[1, 1] = 1
         game = Game(6, 6, beacon)
@@ -23,7 +23,7 @@ class TestConway(unittest.TestCase):
     def test_game_init_defaults(self):
         debugMode=0
         if debugMode == 1:
-            print '>=>test_game_init_defaults'
+            print ('>=>test_game_init_defaults')
         game = Game()
         self.assertEqual(game.board_size, (6, 6))
         self.assertTrue(np.array_equal(game.beacon, np.zeros((6, 6))))
@@ -32,7 +32,7 @@ class TestConway(unittest.TestCase):
     def test_game_init_board_default_beacon(self):
         debugMode=0
         if debugMode == 1:
-            print '>=>test_game_init_board_default_beacon'
+            print ('>=>test_game_init_board_default_beacon')
         game = Game(12, 12)
         self.assertTrue(np.array_equal(game.beacon, np.zeros((12, 12))))
 
@@ -40,7 +40,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_cell_with_one_neighbor(self):
         debugMode=0
         if debugMode == 1:
-            print '>=>test_game_check_cell_with_one_neighbor'
+            print ('>=>test_game_check_cell_with_one_neighbor')
         beacon = [[0, 1, 0]
                 , [0, 1, 0]
                 , [0, 0, 0]]
@@ -64,7 +64,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_top_right_cell_with_one_neighbour(self):
         debugMode=0
         if debugMode == 1:
-            print 'TR 1N'
+            print ('TR 1N')
         #This startup grid is designed to check that if I reference the wrong cell then it is more likely to fail
         beacon = [[0, 0, 1]
                 , [1, 1, 0]
@@ -76,7 +76,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_right_column_bottom_row_cell_with_two_neighbours(self):
         debugMode=0
         if debugMode ==1:
-            print 'BR 2N'
+            print ('BR 2N')
         beacon = [[0, 0, 1]
                 , [1, 1, 0]
                 , [1, 1, 0]]
@@ -86,7 +86,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_left_column_bottom_row_cell_with_three_neighbours(self):
         debugMode=0
         if debugMode ==1:
-            print 'BL 3N'
+            print ('BL 3N')
         beacon = [[0, 0, 1]
                 , [1, 1, 0]
                 , [1, 1, 0]]
@@ -98,7 +98,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_top_left_with_no_neighbours(self):
         debugMode=0
         if debugMode ==1 :
-            print 'TL 0N'
+            print ('TL 0N')
         beacon = [[0, 0, 0]
                 , [0, 0, 0]
                 , [0, 0, 0]]
@@ -108,7 +108,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_top_left_with_three_neighbours(self):
         debugMode=0
         if debugMode ==1 :
-            print("TL 3 N")
+            print ("TL 3 N")
         beacon = [[1, 1, 0]
                 , [1, 1, 0]
                 , [0, 0, 0]]
@@ -119,7 +119,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_centre_column_top_row_cell_with_four_neighbours(self):
         debugMode=0
         if debugMode ==1:
-            print 'TC 4N'
+            print ('TC 4N')
         beacon = [[0, 0, 1]
                 , [1, 1, 1]
                 , [0, 0, 0]]
@@ -130,7 +130,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_rightmost_column_centre_cell_with_two_neighbours(self):
         debugMode=0
         if debugMode ==1:
-            print 'RM 2N'
+            print ('RM 2N')
         beacon = [[0, 0, 1]
                 , [1, 1, 1]
                 , [0, 0, 0]]
@@ -141,7 +141,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_centre_column_bottom_row_cell_with_four_neighbours(self):
         debugMode=0
         if debugMode ==1:
-            print 'BC 3N'
+            print ('BC 3N')
         beacon = [[0, 0, 1]
                 , [1, 1, 1]
                 , [0, 0, 0]]
@@ -152,7 +152,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_leftmost_column_centre_cell_with_one_neighbour(self):
         debugMode=0
         if debugMode ==1:
-            print 'LCMR 1N'
+            print ('LCMR 1N')
         beacon = [[0, 0, 1]
                 , [1, 1, 1]
                 , [0, 0, 0]]
@@ -165,7 +165,7 @@ class TestConway(unittest.TestCase):
     def test_game_check_rightmost_column_centre_cell_with_two_neighbours(self):
         debugMode=0
         if debugMode ==1:
-            print 'RM 2N'
+            print ('RM 2N')
         beacon = [[0, 0, 1]
                 , [1, 1, 1]
                 , [0, 0, 0]]
