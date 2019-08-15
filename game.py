@@ -89,7 +89,7 @@ class Game:
 
 
             if debugMode == 1:
-                print ('finished checking the row')
+                print ('finished checking row ' + str(checkY))
             
         if debugMode == 1:
             print ('finished checking all the rows')
