@@ -15,10 +15,10 @@ class Game:
 
     def _numNeighbors(self, x, y, debugMode=0):
         if debugMode == 1:
-            print '---Game.py _numNeighbours ---'
-            print 'Debug Mode: ON'
-            print ' x=' + str(x) + ' y=' + str(y)
-            print self.state
+            print ('---Game.py _numNeighbours ---')
+            print ('Debug Mode: ON')
+            print (' x=' + str(x) + ' y=' + str(y))
+            print (self.state)
         startX = 0
         startY = 0
         endX = 0
@@ -27,7 +27,7 @@ class Game:
         boardWidth = self.board_size[0]
         boardHeight = self.board_size[1]
         if debugMode ==1:
-            print 'Board width = ' + str(boardWidth) + ' height = ' + str(boardHeight)
+            print ('Board width = ' + str(boardWidth) + ' height = ' + str(boardHeight))
 
         if (x > 0):
             startX = -1
@@ -41,8 +41,8 @@ class Game:
             endY = 1
 
         if debugMode == 1:
-            print ' startX: ' + str(startX) + ' to endX: ' + str(endX)
-            print ' startY: ' + str(startY) + ' to endY: ' + str(endY)
+            print (' startX: ' + str(startX) + ' to endX: ' + str(endX))
+            print (' startY: ' + str(startY) + ' to endY: ' + str(endY))
 
 #        if debugMode == 1:
 #            #here because of my lack of understanding of Python
@@ -57,23 +57,23 @@ class Game:
 #                print ' value = ' + str(b)
 
         if debugMode == 1:
-            print 'Starting to check the ranges for all neighbours'
+            print ('Starting to check the ranges for all neighbours')
 
 
         for checkY in range(y + startY, y + endY + 1):
             if debugMode ==1:
-                print ' --> Row:' + str(checkY)
+                print (' --> Row:' + str(checkY))
             for checkX in range(x + startX, x + endX + 1):
                 if debugMode ==1:
-                    print ' checking ' + str(checkX) + ', ' + str(checkY)
-                    print 'state: ' + str(self.state[checkX][checkY])
+                    print (' checking ' + str(checkX) + ', ' + str(checkY))
+                    print ('state: ' + str(self.state[checkX][checkY]))
 
                    #print 'checking truthy test '
                     #print (checkX == x and checkY == y)
 
                 if (checkX == x and checkY == y):
                     if debugMode ==1:
-                        print ' skipping the x, y co-ordinate start point'
+                        print (' skipping the x, y co-ordinate start point')
 
                 if not (checkX == x and checkY == y):
                     #if debugMode == 1:
@@ -83,16 +83,16 @@ class Game:
                         neighbors += 1
 
                         if debugMode == 1:
-                            print ' found a neighbour at ' + str(checkX) + ', ' + str(checkY) + '. That''s ' + str(neighbors) + ' found.'
+                            print (' found a neighbour at ' + str(checkX) + ', ' + str(checkY) + '. That''s ' + str(neighbors) + ' found.')
                     if debugMode ==1:
-                        print 'state: ' + str(self.state[checkX][checkY])
+                        print ('state: ' + str(self.state[checkX][checkY]))
 
 
             if debugMode == 1:
-                print 'finished checking the row'
+                print ('finished checking the row')
             
         if debugMode == 1:
-            print 'finished checking all the rows'
+            print ('finished checking all the rows')
         return neighbors
 
     def step(self):
