@@ -180,28 +180,31 @@ class TestConway(unittest.TestCase):
         self.assertEqual(game._numNeighbors(1, 2, debugMode), 2) 
 
 
-    def test_weird_test_two_for_random_stuff(self):
-        debugMode=1
-        if debugMode ==1:
-            print ('Weird test two for random stuff')
-        beacon = [[0, 1, 0]
-                , [2, 0, 0]
-                , [0, 0, 0]]
-        game = Game(3, 3, beacon)
-        #TODO: Delete this test, after all it's just tosh, right?
-        self.assertEqual(game._numNeighbors(0, 0, debugMode), 0) 
 
 
-    def test_weird_test_for_random_stuff(self):
-        debugMode=1
-        if debugMode ==1:
-            print ('Weird test for random stuff')
-        beacon = [[1, 1, 1]
-                , [1, 1, 1]
-                , [1, 1, 1]]
-        game = Game(3, 3, beacon)
-        #TODO: Delete this test, after all it's just tosh, right?
-        self.assertEqual(game._numNeighbors(0, 0, debugMode), 3) 
+#####################Remove my temp weird tests for now
+#    def test_weird_test_two_for_random_stuff(self):
+#        debugMode=1
+#        if debugMode ==1:
+#            print ('Weird test two for random stuff')
+#        beacon = [[0, 1, 0]
+#                , [2, 0, 0]
+#                , [0, 0, 0]]
+#        game = Game(3, 3, beacon)
+#        #TODO: Delete this test, after all it's just tosh, right?
+#        self.assertEqual(game._numNeighbors(0, 0, debugMode), 0) 
+#
+#
+#    def test_weird_test_for_random_stuff(self):
+#        debugMode=1
+#        if debugMode ==1:
+#            print ('Weird test for random stuff')
+#        beacon = [[1, 1, 1]
+#                , [1, 1, 1]
+#                , [1, 1, 1]]
+#        game = Game(3, 3, beacon)
+#        #TODO: Delete this test, after all it's just tosh, right?
+#        self.assertEqual(game._numNeighbors(0, 0, debugMode), 3) 
 
 
 
