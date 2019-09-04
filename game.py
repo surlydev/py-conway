@@ -79,7 +79,8 @@ class Game:
                     #if debugMode == 1:
                         #print ' checking state'
                         #print ' state :' + str(self.state[checkX][checkY])
-                    if (self.state[checkX][checkY] == 1): 
+                    #The Y and X are the 'wrong way round' for me, logically, but this is because of the way we use a list of lists.
+                    if (self.state[checkY][checkX] == 1): 
                         neighbors += 1
 
                         if debugMode == 1:

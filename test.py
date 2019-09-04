@@ -65,7 +65,7 @@ class TestConway(unittest.TestCase):
                 , [0, 0, 0]
                 , [0, 0, 0]]
         game = Game(3, 3, beacon)
-        self.assertEqual(game._numNeighbors(0,1), 1)
+        self.assertEqual(game._numNeighbors(1, 0, debugMode), 1)
 
     def test_game_check_top_right_cell_with_one_neighbour(self):
         debugMode=0
@@ -76,8 +76,7 @@ class TestConway(unittest.TestCase):
                 , [1, 1, 0]
                 , [1, 1, 0]]
         game = Game(3, 3, beacon)
-        #TODO: check the 0,2 is the wrong way around, isn't it?
-        self.assertEqual(game._numNeighbors(0,2, debugMode), 1)
+        self.assertEqual(game._numNeighbors(2, 0, debugMode), 1)
 
     def test_game_check_right_column_bottom_row_cell_with_two_neighbours(self):
         debugMode=0
@@ -87,7 +86,7 @@ class TestConway(unittest.TestCase):
                 , [1, 1, 0]
                 , [1, 1, 0]]
         game = Game(3, 3, beacon)
-        self.assertEqual(game._numNeighbors(2, 2), 2) 
+        self.assertEqual(game._numNeighbors(2, 2, debugMode), 2) 
 
     def test_game_check_left_column_bottom_row_cell_with_three_neighbours(self):
         debugMode=0
@@ -97,8 +96,7 @@ class TestConway(unittest.TestCase):
                 , [1, 1, 0]
                 , [1, 1, 0]]
         game = Game(3, 3, beacon)
-        #TODO: check the 2,0 is the wrong way around, isn't it?
-        self.assertEqual(game._numNeighbors(2, 0), 3) 
+        self.assertEqual(game._numNeighbors(0, 2, debugMode), 3) 
 
 
     def test_game_check_top_left_with_no_neighbours(self):
@@ -130,8 +128,7 @@ class TestConway(unittest.TestCase):
                 , [1, 1, 1]
                 , [0, 0, 0]]
         game = Game(3, 3, beacon)
-        #TODO: check the 0,1 orientation of this test. It's the wrong way around, surely?
-        self.assertEqual(game._numNeighbors(0, 1, debugMode), 4) 
+        self.assertEqual(game._numNeighbors(1, 0, debugMode), 4) 
 
     def test_game_check_rightmost_column_centre_cell_with_two_neighbours(self):
         debugMode=0
@@ -144,7 +141,7 @@ class TestConway(unittest.TestCase):
         #TODO: check the 0,1 orientation of this test. It's the wrong way around, surely?
         self.assertEqual(game._numNeighbors(1, 2, debugMode), 2) 
 
-    def test_game_check_centre_column_bottom_row_cell_with_four_neighbours(self):
+    def test_game_check_centre_column_bottom_row_cell_with_three_neighbours(self):
         debugMode=0
         if debugMode ==1:
             print ('BC 3N')
@@ -152,8 +149,7 @@ class TestConway(unittest.TestCase):
                 , [1, 1, 1]
                 , [0, 0, 0]]
         game = Game(3, 3, beacon)
-        #TODO: check the 0,1 orientation of this test. It's the wrong way around, surely?
-        self.assertEqual(game._numNeighbors(2, 1, debugMode), 3) 
+        self.assertEqual(game._numNeighbors(1, 2, debugMode), 3) 
 
     def test_game_check_leftmost_column_centre_cell_with_one_neighbour(self):
         debugMode=0
@@ -163,10 +159,7 @@ class TestConway(unittest.TestCase):
                 , [1, 1, 1]
                 , [0, 0, 0]]
         game = Game(3, 3, beacon)
-        #TODO: check the 0,1 orientation of this test. It's the wrong way around, surely?
-        self.assertEqual(game._numNeighbors(1, 0, debugMode), 1) 
-
-
+        self.assertEqual(game._numNeighbors(0, 1, debugMode), 1) 
 
     def test_game_check_rightmost_column_centre_cell_with_two_neighbours(self):
         debugMode=0
@@ -176,8 +169,7 @@ class TestConway(unittest.TestCase):
                 , [1, 1, 1]
                 , [0, 0, 0]]
         game = Game(3, 3, beacon)
-        #TODO: check the 0,1 orientation of this test. It's the wrong way around, surely?
-        self.assertEqual(game._numNeighbors(1, 2, debugMode), 2) 
+        self.assertEqual(game._numNeighbors(2, 1, debugMode), 2) 
 
 
 
